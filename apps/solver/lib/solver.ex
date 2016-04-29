@@ -1,8 +1,9 @@
 defmodule Cheater.Solver do
   use GenServer
 
-  def start_link(%{key: key} = args) do
-    GenServer.start_link(__MODULE__, args, name: key)
+  def start_link() do
+    {:ok, pid} = GenServer.start_link(__MODULE__, [])
+    {:ok, pid}
   end
 
   # Public API

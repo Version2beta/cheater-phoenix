@@ -3,8 +3,8 @@ defmodule SolverTest do
   doctest Cheater.Solver
 
   setup do
-    {:ok, solver} = Cheater.Solver.start_link %{key: :test}
-    :ok
+    {:ok, pid} = Cheater.Solver.start_link
+    {:ok, pid: pid}
   end
 
   test "match" do
@@ -16,7 +16,7 @@ defmodule SolverTest do
     assert Cheater.Solver.suggest('abc', ['a', 'ba', 'fa', 'la']) == ['a', 'ba']
   end
 
-  test "solve" do
-    assert Cheater.Solver.solve(:test, 'abc', ['a', 'ba', 'fa', 'la']) == ['a', 'ba']
+  test "solve", context do
+    assert Cheater.Solver.solve(context[:pid], 'abc', ['a', 'ba', 'fa', 'la']) == ['a', 'ba']
   end
 end

@@ -1,4 +1,4 @@
 # Cheater
 
-**TODO: Add description**
+An Elixir+Phoenix Scrabble Solver
 
