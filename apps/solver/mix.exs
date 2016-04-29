@@ -19,8 +19,7 @@ defmodule Solver.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [
-      applications: [:logger],
-      mod: {Cheater.Solver.Supervisor, []}
+      applications: [:logger]
     ]
   end
 

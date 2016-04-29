@@ -7,7 +7,7 @@ defmodule Cheater.Solver.Supervisor do
   end
 
   def start_solver_supervisor do
-    children = [worker(Cheater.Solver, [])]
+    children = [worker(Cheater.Solver, [], restart: :temporary)]
     Supervisor.start_link(children, strategy: :simple_one_for_one, name: Cheater.SolverSupervisor)
   end
 
